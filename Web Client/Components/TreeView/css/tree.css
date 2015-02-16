@@ -1,0 +1,47 @@
+
+ul.tree-lits li.tree-row {
+  padding: 0px;
+  margin:0px;
+}
+.tree-line:hover{
+  background-color: #F0F2FF;
+  border-radius: 5px;
+}
+
+ul.tree-list li.tree-row a {
+  padding: 3px 10px;
+}
+
+ul.tree-list i.indented {
+  padding: 2px;
+}
+
+.tree-list {
+  cursor: pointer;
+  list-style-type: none;
+}
+.selected-row {
+    color: #0020C2;
+    font-weight: bolder;
+}
+
+.tree-line-image{
+    height: 20px;
+    width: 20px;
+}
+
+.tree-line {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    //margin-bottom: 20px;
+    font-size: 17px;
+    font-weight: normal;
+    font-family: "wf_segoe-ui_semilight", "Segoe UI Semilight", "Segoe WP Semilight", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+}
+
+.tree-line > .tree-handle {
+    font-size: 70%;
+}
+.tree-line > span > span > a {
+    color : #000000!important;
+}

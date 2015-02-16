@@ -1,0 +1,16 @@
+<div style="height: 100%; overflow-y: scroll;">
+    <script type="text/ng-template"  id="tree_item_renderer.html">
+
+        <tree-line></tree-line>
+
+
+        <ul class="tree-list" ng-show="row.expanded">
+            <li ng-repeat="row in row.children" ng-include="'tree_item_renderer.html'"></li>
+        </ul>
+    </script>
+
+    <ul class="tree-list">
+        <li class="tree-row" ng-repeat="row in tree" ng-include="'tree_item_renderer.html'"></li>
+    </ul>
+
+</div>

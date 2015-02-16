@@ -1,0 +1,10 @@
+<div class="modal-header">
+    <h3 class="modal-title">New Practice Area</h3>
+</div>
+<div class="modal-body">
+    Are you sure you want to delete {{selectedItems.length > 1 ? 'these' : 'this'}} practice area{{selectedItems.length > 1 ? 's' : ''}}? This will not affect any existing cases.
+</div>
+<div class="modal-footer">
+    <button ng-disabled="name.length == 0" class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

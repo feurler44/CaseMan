@@ -1,0 +1,11 @@
+<p class="tree-line" ng-mouseenter="$parent.mouseEnter(row, $event)" ng-mouseleave="$parent.mouseLeave(row, $event)" ng-click="$parent.customClick(row, $event)">
+    <span ng-hide="row.handle == false" class="tree-handle">
+        <i ng-click="$parent.expandRow(row)" ng-class="row.expanded ? 'glyphicon glyphicon-menu-down' : 'glyphicon glyphicon-menu-right'"></i>
+    </span>
+    &nbsp;&nbsp;&nbsp;
+    <span>
+        <img ng-show="row.icon !== undefined" class="tree-line-image" ng-src="{{row.icon }}"  />
+        <span ng-hide="row.editing"><a ui-sref="{{row.linkTo}}">{{ row.name }}</a></span>
+        <input type="text" ng-show="row.branch.editing" value="{{row.branch.name}}" ng-model="row.branch.name" style="background-color: #428bca">
+    </span>
+</p>
