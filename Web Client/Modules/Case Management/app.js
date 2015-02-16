@@ -1,11 +1,18 @@
 (function(){
     angular
         .module('caseMan', ['ui.router', 'dataModel', 'treeView', 'cases'])
-        .controller('Ctrl', function(DataModel){
+        .controller('Ctrl', ['$http', 'DataModel', function( $http, DataModel ){
+            $http.get('http://localhost:3000/myService')
+                .success( function (data, status, headers, config ) {
+                    console.log ( data );
+                })
+                .error ( function (data, status, headers, config ) {
+                    console.log ( data );
+                })
             var c = new DataModel.Case();
             console.log("HVHVHVHVHJVhjv");
             console.log(c);
-        })
+        }])
         .config(function($stateProvider, $urlRouterProvider){
             $urlRouterProvider.otherwise("/home");
 
