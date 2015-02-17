@@ -7,25 +7,6 @@ var http = require( 'http'),
 var app = express();
 app.set( 'port', process.env.PORT || 3000 );
 
-app.get( '/myService', function ( req, res ) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8000');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-
-    //res.send( req );
-    // Connect to the db
-    MongoClient.connect("mongodb://localhost:27017/caseman", function(err, db) {
-        if(err) { return console.dir(err); }
-
-        var collection = db.collection( 'users' );
-
-        collection.find().toArray( function( err, items ) {
-            res.send( items );
-        });
-
-    });
-});
 app.get( '/getFirms', function ( req, res ) {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8000');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -41,6 +22,7 @@ app.get( '/getFirms', function ( req, res ) {
 
         collection.find().toArray( function( err, items ) {
             res.send( items );
+            db.close();
         });
 
     });
