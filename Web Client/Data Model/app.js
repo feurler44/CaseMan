@@ -10,6 +10,7 @@
             DataModel.Document = Document;
             DataModel.Event = Event;
             DataModel.Expense = Expense;
+            DataModel.Firm = Firm;
             DataModel.Group = Group;
             DataModel.Invoice = Invoice;
             DataModel.Location = Location;

@@ -4,42 +4,42 @@ function TreeController($scope, $rootScope) {
         {
             name : 'Home',
             children:[],
-            linkTo : 'home'
+            linkTo : 'app.home'
         },
         {
             name : 'Calendar',
             children:[],
-            linkTo : 'calendar'
+            linkTo : 'app.calendar'
         },
         {
             name : 'Tasks',
             children:[],
-            linkTo : 'tasks'
+            linkTo : 'app.tasks'
         },
         {
             name : 'Contacts',
             children:[],
-            linkTo : 'contacts'
+            linkTo : 'app.contacts'
         },
         {
             name : 'Cases',
             children:[],
-            linkTo : 'cases'
+            linkTo : 'app.cases'
         },
         {
             name : 'Document',
             children:[],
-            linkTo : 'document'
+            linkTo : 'app.document'
         },
         {
             name : 'Billing',
             children:[],
-            linkTo : 'billing'
+            linkTo : 'app.billing'
         },
         {
             name : 'Reporting',
             children:[],
-            linkTo : 'Reporting'
+            linkTo : 'app.Reporting'
         },
         {
             name : 'Profile',

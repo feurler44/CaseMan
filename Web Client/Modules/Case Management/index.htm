@@ -36,6 +36,7 @@
     <script type="text/javascript" src="/Data Model/Document.js"></script>
     <script type="text/javascript" src="/Data Model/Event.js"></script>
     <script type="text/javascript" src="/Data Model/Expense.js"></script>
+    <script type="text/javascript" src="/Data Model/Firm.js"></script>
     <script type="text/javascript" src="/Data Model/Group.js"></script>
     <script type="text/javascript" src="/Data Model/Invoice.js"></script>
     <script type="text/javascript" src="/Data Model/Location.js"></script>
@@ -69,22 +70,11 @@
     <link rel="stylesheet" href="/Resources/css/style.css">
     <!-- <link rel="stylesheet" href="bootstrap.vertical-tabs.css"> -->
 </head>
-<body ng-app="caseMan" ng-controller="Ctrl">
+<body ng-app="caseMan">
 
-    <h1>Caseman <small> | Demo</small></h1>
-    <div class="row" style="min-height:600px;">
-        <div class="col-xs-3" >
-            <tree-view></tree-view>
+    <div ui-view></div>
 
-        </div>
 
-        <div class="col-xs-9">
-            <div ui-view > main</div>
-        </div>
-
-        <div class="clearfix"></div>
-
-    </div>
 
 </body>
 </html>
