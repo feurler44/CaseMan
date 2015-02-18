@@ -1,0 +1,152 @@
+<div style="width: 50%">
+    <div>
+        <div style="float: left"><h1>Create New Case</h1></div>
+        <div ng-repeat="s in steps | limitTo : step" style="float:left; height: 17px; width: 34px; border : 1px solid grey; background-color: green"></div>
+        <div ng-repeat="s in steps | limitTo : steps.length - step" style="float:left; height: 17px; width: 34px; border : 1px solid grey"></div>
+    </div>
+    <div id="create-new-case-steps">
+        <div id="create-new-case-step1" style="clear : both" ng-show=" step == 1 ">
+            <table>
+                <tbody>
+                <tr>
+                    <th><label>Case Name</label></th>
+                    <td><input ng-model="case.name" class="form-control" size="30" type="text"></td>
+                </tr>
+                <tr>
+                    <th><label >Case&nbsp;Number&nbsp;&nbsp;</label></th>
+                    <td><input ng-model="case.number" class="form-control" size="30" type="text"></td>
+                </tr>
+                <tr>
+                    <th><label >Date Opened</label></th>
+                    <td><input ng-model="case.dateOpened" class="form-control" type="date">
+                    </td>
+                </tr>
+                <tr>
+                    <th><label >Practice Area</label></th>
+                    <td>
+                        <select ng-model="case.practiceArea" class="form-control">
+                            <option value="548780">Bankruptcy</option>
+                            <option value="548781">Business</option>
+                            <option value="548782">Civil</option>
+                            <option value="548783">Criminal Defense</option>
+                            <option value="548784">Divorce/Separation</option>
+                            <option value="548785">DUI/DWI</option>
+                            <option value="548786">Employment</option>
+                            <option value="548787">Estate Planning</option>
+                            <option value="548788">Family</option>
+                            <option value="548789">Foreclosure</option>
+                            <option value="548790">Immigration</option>
+                            <option value="548791">Landlord/Tenant</option>
+                            <option value="548792">Personal Injury</option>
+                            <option value="548793">Real Estate</option>
+                            <option value="548794">Tax</option></select>
+                        </select>
+                        <br/>
+                        <a style="cursor:pointer;"><span class="glyphicon glyphicon-plus"></span>Add Practice Area</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label>Description</label></th>
+                    <td>
+                        <textarea cols="40" rows="50" style="resize: none; overflow-y: hidden; height: 32px;"></textarea><br>
+                        <em>This description is never shared with clients</em>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label>How should this case be billed? </label></th>
+                    <td>
+                        <select ng-model="case.billingType" class="form-control">
+                            <option value=""></option>
+                            <option value="hourly">Hourly</option>
+                            <option value="contingency">Contingency</option>
+                            <option value="flat">Flat Fee</option>
+                            <option value="mixed">Mix of Flat Fee and Hourly</option>
+                            <option value="pro_bono">Pro Bono</option>
+                        </select>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="create-new-case-step2" style="clear : both" ng-show="step == 2">
+            <h3>Link Firm Users</h3>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <td><input type="checkbox" value="true"></td>
+                    <td colspan="2">Select Firm Users</td>
+                    <td>Case Billing Rate</td>
+                </tr>
+
+                <tr>
+                    <td><input checked="checked" type="checkbox" value="true"></td>
+                    <td><label>Chatis Santos</label></td>
+                    <td>(Attorney)</td>
+                    <td><input ></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div id="create-new-case-step3" style="clear : both" ng-show="step == 3">
+            <h3>Link Contacts</h3>
+            <table id="existing_client_table" class="form">
+                <tbody>
+                <tr>
+                    <th><label>Contact Name</label></th>
+                    <td>
+                        <input class="form-control" type="text">
+                        <a style="cursor: pointer;"><span class="glyphicon glyphicon-plus"></span>Add a new contact</a>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div id="create-new-case-step4" style="clear : both" ng-show="step == 4">
+            <h3>Summary</h3>
+            <table class="form">
+                <tbody>
+                <tr>
+                    <th>Case Name</th>
+                    <td>{{case.name}}</td>
+                </tr>
+                <tr>
+                    <th>Case Number</th>
+                    <td>{{case.number}}</td>
+                </tr>
+                <tr>
+                    <th>Staff Link</th>
+                    <td>{{case.staffs[0].name}}</td>
+                </tr>
+                <tr>
+                    <th>Contact Link</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Billing</th>
+                    <td>
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>Contact:</td><td>{{case.contacts[0].name}}</td>
+                            </tr>
+                            <tr>
+                                <td>Type:</td>
+                                <td>{{case.billingType}}</td>
+                            </tr>
+                            <tr>
+                                <td>Amount:</td><td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody></table></div>
+    </div>
+    <div style="text-align: right">
+        <button ng-show="step > 1" ng-click="goToPreviousStep()" class="btn btn-default">back</button>
+        <button ng-show="step >= 1 && step < steps.length" ng-click="goToNextStep()" class="btn btn-success">next</button>
+        <button ng-show="step == steps.length" ng-click="save()" class="btn btn-success">save & finish</button>
+    </div>
+</div>

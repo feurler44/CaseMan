@@ -1,6 +1,6 @@
 <div style="cursor: pointer; width: 20%; position: relative; left: 40%;">
     <ul class="list-group">
-        <li class="list-group-item" ui- ui-sref="app" ng-repeat="firm in firms">{{firm.name}}</li>
+        <li ng-click="setFirm( firm )" class="list-group-item" ui- ui-sref="app" ng-repeat="firm in firms">{{firm.name}}</li>
     </ul>
 </div>
 

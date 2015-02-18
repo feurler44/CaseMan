@@ -16,14 +16,18 @@ app.get( '/getFirms', function ( req, res ) {
     //res.send( req );
     // Connect to the db
     MongoClient.connect("mongodb://localhost:27017/caseman", function(err, db) {
-        if(err) { return console.dir(err); }
+        if(err) {
+            res.status( 500 ).send( err.stack );
+        }
+        else {
+            var collection = db.collection( 'Firms' );
 
-        var collection = db.collection( 'Firms' );
+            collection.find().toArray( function( err, items ) {
+                res.send( items );
+                db.close();
+            });
+        }
 
-        collection.find().toArray( function( err, items ) {
-            res.send( items );
-            db.close();
-        });
 
     });
 });

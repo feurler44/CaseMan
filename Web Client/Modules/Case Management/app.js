@@ -9,11 +9,18 @@
                 .state('home', {
                     url : '/home',
                     templateUrl : 'Views/home.htm',
-                    controller : function ( $scope, $http ) {
+                    controller : function ( $scope, $rootScope, $http ) {
                         $http.get( 'http://localhost:3000/getFirms' )
                             .success( function (data, status, headers, config ) {
                                 $scope.firms = data;
-                            });
+                            })
+                            .error( function ( data, status, headers, config ){
+                                console.log( data );
+                            })
+                        ;
+                        $scope.setFirm = function ( firm ) {
+                            $rootScope.firm = firm;
+                        };
                     }
                 })
                 .state('app', {
@@ -24,21 +31,20 @@
                             return $stateParams.firm;
                         }]
                     },
-                    controller : function ( $scope, $http ) {
-                        $scope.firm = {};
+                    controller : function ( $scope, $rootScope, $http ) {
+                        $scope.firm = $rootScope.firm;
                     }
                 })
 
                 .state('app.cases', {
                     url : '/cases',
-                    templateUrl : 'Views/cases.htm'
+                    templateUrl : '../Cases/Views/cases.htm',
+                    controller : 'CasesController'
                 })
-                .state('app.cases.new', {
-                    url : '/new',
-                    templateUrl : 'Views/newPracticeArea.htm',
-                    controller : function($scope) {
-                        $scope.items = ["A", "List", "Of", "Items"];
-                    }
+                .state('app.cases.createCase', {
+                    url : '/createCase',
+                    templateUrl : '../Cases/Views/createCase.htm',
+                    controller : 'CreateCaseController'
                 })
                 .state('app.cases.list', {
                     url : '/list',
