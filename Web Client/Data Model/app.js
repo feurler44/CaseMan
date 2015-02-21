@@ -63,6 +63,60 @@
             };
 
 
+            function User (){
+                var User = this;
+
+                User.id = null;
+
+                User.firstName = null;
+                User.lastName = null;
+                User.type = null;
+                User.emails = [];
+                User.phones = null;
+                User.address = null;
+                User.groups = null;
+                User.rate = null;
+                User.cases = null;
+            }
+            User.prototype.getFirstName = function(){};
+            User.prototype.getLastName = function(){};
+            User.prototype.getEmails = function(){};
+            User.prototype.getPhones = function(){};
+            User.prototype.getAddress = function(){};
+            User.prototype.getGroups = function(){};
+            User.prototype.getRate = function(){};
+            User.prototype.getCases = function(){};
+
+            User.prototype.setFirstName = function(name){};
+            User.prototype.setLastName = function(name){};
+            User.prototype.addEmail = function(email){};
+            User.prototype.addPhone = function(phone){};
+            User.prototype.setAddress = function(address){};
+            User.prototype.linkGroup = function(group){};
+            User.prototype.removeFromGroup = function(group){};
+            User.prototype.setRate = function(rate){};
+            User.prototype.linkCase = function(Case){};
+            User.prototype.save = function(){
+                var $this = this;
+                $.ajax({
+                    type: "POST",
+                    url: 'http://localhost:3000/createUsers',
+                    data: {
+                        firstName : $this.firstName,
+                        lastName : $this.lastName,
+                        type : $this.type,
+                        emails : $this.emails,
+                        phones : $this.phones,
+                        address : $this.address,
+                        groups : $this.groups,
+                        rate : $this.rate,
+                        cases : $this.cases
+                    },
+                    success: function(){},
+                    dataType: 'JSON'
+                });
+
+            };
 
 
             var DataModel = this;
@@ -81,7 +135,7 @@
             DataModel.PhoneNumber = PhoneNumber;
             DataModel.PracticeArea = PracticeArea;
             DataModel.Reminder = Reminder;
-            DataModel.Staff = Staff;
+            DataModel.User = User;
             DataModel.Task = Task;
             DataModel.TimeEntry = TimeEntry;
 

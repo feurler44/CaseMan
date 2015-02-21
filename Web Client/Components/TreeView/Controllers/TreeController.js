@@ -39,23 +39,28 @@ function TreeController($scope, $rootScope) {
         {
             name : 'Reporting',
             children:[],
-            linkTo : 'app.Reporting'
+            linkTo : 'app.reporting'
         },
         {
             name : 'Profile',
             children:[],
-            linkTo : ''
+            linkTo : 'app.profile'
         },
         {
             name : 'Message',
             children:[],
-            linkTo : ''
+            linkTo : 'app.message'
         },
         {
             name : 'Setting',
             children:[],
-            linkTo : ''
+            linkTo : 'app.setting'
         },
+        {
+            name : 'User',
+            children:[],
+            linkTo : 'app.users'
+        }
     ];
     $scope.tree.sort( function( a, b ) {
         if ( a.name < b.name )

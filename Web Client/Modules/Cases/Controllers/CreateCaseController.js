@@ -22,4 +22,23 @@ function CreateCaseController ( $scope, $rootScope, $http, DataModel ){
     $scope.goToPreviousStep = function () {
         $scope.step--;
     }
+
+
+    //Validation
+    $scope.isValid = function ( ){
+        switch ( $scope.step ){
+            case 1 :
+                if ( $scope.case.name == null || $scope.case.name.length == 0 )
+                break;
+            case 2 :
+                break;
+            case 3 :
+                break;
+            case 4 :
+                break;
+            default :
+                break;
+        }
+    };
+
 }

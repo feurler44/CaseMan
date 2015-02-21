@@ -1,0 +1,39 @@
+<div style="float: left; width: 35%; border: 5px solid #bfbfbd; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding: 10px; padding-left: 20px; margin-top: 10px; margin-bottom: 10px;">
+    <div ng-repeat="user in users">
+        <div style="margin-bottom: 10px;" class="row">
+            <div class="col-lg-2 col-sm-2 col-md-2">Name</div>
+            <div class="col-lg-5 col-sm-5 col-md-5">
+                <input style="border: {{user.invalidFirstName ? '1px solid red' : ''}}" class="form-control" placeholder="First Name" ng-model="user.firstName">
+                <em style="color : red" ng-show="user.invalidFirstName">Invalid first name</em>
+            </div>
+            <div class="col-lg-5 col-sm-5 col-md-5">
+                <input style="border: {{user.invalidLastName ? '1px solid red' : ''}}" class="form-control" placeholder="Last Name" ng-model="user.lastName">
+                <em style="color : red" ng-show="user.invalidLastName">Invalid last name</em>
+            </div>
+        </div>
+        <div style="margin-bottom: 10px;" class="row">
+            <div class="col-lg-2 col-sm-2 col-md-2">Email Address</div>
+            <div class="col-lg-10 col-sm-10 col-md-10">
+                <input style="border: {{user.invalidEmail ? '1px solid red' : ''}}" class="form-control" placeholder="name@domain.com" ng-model="user.emails[0]">
+                <em style="color : red" ng-show="user.invalidEmail">Invalid email</em>
+            </div>
+        </div>
+        <div style="margin-bottom: 10px;" class="row">
+            <div class="col-lg-2 col-sm-2 col-md-2">User Type</div>
+            <div class="col-lg-10 col-sm-10 col-md-10">
+                <select style="border: {{user.invalidType ? '1px solid red' : ''}}" ng-model="user.type" class="form-control">
+                    <option value=""></option>
+                    <option value="Attorney">Attorney</option>
+                    <option value="Paralegal">Paralegal</option>
+                    <option value="Staff">Staff</option>
+                </select>
+                <em style="color : red" ng-show="user.invalidType">Select user type</em>
+            </div>
+        </div>
+        <hr/>
+    </div>
+    <div >
+        <button ng-click="createUsers()" class="btn btn-success">save</button>
+    </div>
+</div>
+<a style="cursor:pointer;" ng-click="addAnotherUser()"><span class="glyphicon glyphicon-plus"></span>Add Another User</a>

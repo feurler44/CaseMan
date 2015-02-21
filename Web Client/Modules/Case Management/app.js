@@ -54,6 +54,29 @@
                     }
                 })
 
+                .state( 'app.users', {
+                    url : '/users',
+                    templateUrl : '../Users/Views/users.htm',
+                    controller : 'UsersController'
+                })
+                .state('app.users.createUser', {
+                    url : '/createUser',
+                    templateUrl : '../Users/Views/createUser.htm',
+                    controller : 'CreateUserController'
+                })
+
+
+                .state( 'app.contacts', {
+                    url : '/contacts',
+                    templateUrl : '../Contacts/Views/contacts.htm',
+                    controller : 'ContactsController'
+                })
+                .state('app.contacts.createContact', {
+                    url : '/createContact',
+                    templateUrl : '../Contacts/Views/createContact.htm',
+                    controller : 'CreateContactController'
+                })
+
 
         })
 }());

@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Case Manager</title>
+
+        <link rel="stylesheet" type="text/css" href="../../Resources/css/bootstrap.css">
+        <link href="../../Resources/css/jquery-ui.css">
+        <script type="text/javascript" src="../../Resources/js/jquery-1.11.2.js"></script>
+        <script type="text/javascript" src="../../Resources/js/jquery-ui.js"></script>
+        <script type="text/javascript" src="../../Resources/js/angular.js"></script>
+        <script type="text/javascript" src="../../Resources/js/ui-bootstrap-tpls-0.12.0.js"></script>
+
+        <script type="text/javascript" src="/Data Model/PracticeArea.js"></script>
+
+        <script type="text/javascript" src="../Controllers/Controller.js"></script>
+        <script type="text/javascript" src="../Controllers/NewPracticeAreaController.js"></script>
+        <script type="text/javascript" src="../Controllers/DeletePracticeAreaConfirmController.js"></script>
+        <script type="text/javascript" src="../Directives/Directives.js"></script>
+
+        <script type="text/javascript" src="app.js"></script>
+    </head>
+    <body ng-app="Cases">
+        <nav class="navbar navbar-primary">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        Case Manager
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <practice-areas></practice-areas>
+    </body>
+</html>
