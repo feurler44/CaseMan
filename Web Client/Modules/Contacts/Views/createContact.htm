@@ -1,4 +1,4 @@
-<div style="float: left; width: 70%; border: 5px solid #bfbfbd; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding: 10px; padding-left: 20px; margin-top: 10px; margin-bottom: 10px;">
+<div style="float: left; width: 50%; border: 5px solid #bfbfbd; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding: 10px; padding-left: 20px; margin-top: 10px; margin-bottom: 10px;">
     <div ng-repeat="user in users">
         <div style="margin-bottom: 10px;" class="row">
             <div class="col-lg-2 col-sm-2 col-md-2">Name</div>
@@ -21,14 +21,13 @@
         <div style="margin-bottom: 10px;" class="row">
             <div class="col-lg-2 col-sm-2 col-md-2">Company</div>
             <div class="col-lg-10 col-sm-10 col-md-10">
-                <input class="form-control" placeholder="name@domain.com" ng-model="user.emails[0]">
+                <input class="form-control" placeholder="Company's full legal name" ng-model="user.emails[0]">
             </div>
         </div>
         <div style="margin-bottom: 10px;" class="row">
             <div class="col-lg-2 col-sm-2 col-md-2">Group</div>
             <div class="col-lg-10 col-sm-10 col-md-10">
                 <select style="border: {{user.invalidType ? '1px solid red' : ''}}" ng-model="user.type" class="form-control">
-                    <option value=""></option>
                     <option value="Attorney">Client</option>
                     <option value="Paralegal">Co-counsel</option>
                     <option value="Staff">Expert</option>
@@ -40,45 +39,50 @@
         <hr/>
 
 
+
         <div class="row">
             <div class="col-lg-3 col-sm-3 col-md-3"><h4>Phone Number</h4></div>
             <div class="col-lg-6 col-sm-6 col-md-6"><h4>Address</h4></div>
-            <div class="col-lg-3 col-sm-3 col-md-3"><h4>Other Information</h4></div>
         </div>
-        <div class="row">
+        <div class="row" style="margin-bottom: 10px;">
             <div class="col-lg-3 col-sm-3 col-md-3">
-                <div class="row">
-                    <div class="col-lg-2 col-md-2 col-ms-2">Home</div>
-                    <div class="col-lg-10 col-md-10 col-ms-10"><input class="form-control"></div>
-                </div>
+                <input class="form-control" placeholder="Work">
             </div>
-            <div class="col-lg-6 col-sm-6 col-md-6">
+            <div class="col-lg-7 col-sm-7 col-md-7">
                 <input class="form-control" placeholder="Street">
             </div>
-            <div class="col-lg-3 col-sm-3 col-md-3">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-ms-4">Birthday</div>
-                    <div class="col-lg-8 col-md-8 col-ms-8"><input class="form-control" type="date"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-sm-3 col-md-3">
-                <div class="row">
-                    <div class="col-lg-2 col-md-2 col-ms-2">Word</div>
-                    <div class="col-lg-10 col-md-10 col-ms-10"><input class="form-control"></div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-sm-6 col-md-6">
+            <div class="col-lg-2 col-sm-2 col-md-2">
                 <input class="form-control" placeholder="Apt/Unit">
             </div>
+        </div>
+        <div class="row" style="margin-bottom: 10px;">
             <div class="col-lg-3 col-sm-3 col-md-3">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-ms-4">Licence</div>
-                    <div class="col-lg-5 col-md-5 col-ms-5"><input class="form-control" placeholder="Number"></div>
-                    <div class="col-lg-3 col-md-3 col-ms-3"><input class="form-control" placeholder="State"></div>
-                </div>
+                <input class="form-control" placeholder="Cell">
             </div>
+            <div class="col-lg-5 col-sm-5 col-md-5">
+                <input class="form-control" placeholder="City">
+            </div>
+            <div class="col-lg-2 col-sm-2 col-md-2">
+                <input class="form-control" placeholder="State">
+            </div>
+            <div class="col-lg-2 col-sm-2 col-md-2">
+                <input class="form-control" placeholder="Zip">
+            </div>
+        </div>
+        <hr/>
+        <h4>Other Information</h4>
+        <div class="row" style="margin-bottom: 10px;">
+            <div class="col-lg-2 col-md-2 cold-sm-2">Birthday</div>
+            <div class="col-lg-5 col-md-5 cold-sm-5"><input class="form-control" type="date"></div>
+        </div>
+        <div class="row" style="margin-bottom: 10px;">
+            <div class="col-lg-2 col-md-2 cold-sm-2">License</div>
+            <div class="col-lg-3 col-md-3 cold-sm-3"><input class="form-control" placeholder="Number"></div>
+            <div class="col-lg-2 col-md-2 cold-sm-2"><input class="form-control" placeholder="State"></div>
+        </div>
+        <div class="row" style="margin-bottom: 10px;">
+            <div class="col-lg-2 col-md-2 cold-sm-2">Website</div>
+            <div class="col-lg-5 col-md-5 cold-sm-5"><input class="form-control" placeholder="Website"></div>
         </div>
 
         <hr/>
