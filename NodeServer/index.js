@@ -83,7 +83,7 @@ app.get( '/getContacts', function ( req, res ) {
 
     });
 });
-app.post( '/createUsers', function ( req, res ) {
+app.post( '/createUser', function ( req, res ) {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8000');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
@@ -105,6 +105,10 @@ app.post( '/createUsers', function ( req, res ) {
 
     });
 });
+
+
+
+
 
 app.listen( app.get( 'port'), function( ) {
     console.log( 'CASEMAN server listening on port ' + app.get( 'port' ));

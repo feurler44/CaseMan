@@ -119,6 +119,108 @@
             };
 
 
+
+
+
+            function Contact(id){
+                var Contact = this;
+
+                Contact.id = undefined;
+
+                Contact.firstName = null;
+                Contact.lastName = null;
+                Contact.emails = [];
+                Contact.phones = [
+                    {
+                        type : 'work',
+                        value : '',
+                        extension : ''
+                    },
+                    {
+                        type : 'cell',
+                        value : ''
+                    }
+                ];
+                Contact.street = null;
+                Contact.unit = null;
+                Contact.city = null;
+                Contact.state = null;
+                Contact.zip = null;
+                Contact.type = null;
+
+                Contact.invoices = null;
+                Contact.payements = null;
+
+            }
+
+            Contact.prototype.getFirstName = function(){};
+            Contact.prototype.getLastName = function(){};
+            Contact.prototype.getEmails = function(){};
+            Contact.prototype.getPhones = function(){};
+            Contact.prototype.getAddresses = function(){};
+            Contact.prototype.getGroups = function(){};
+            Contact.prototype.getInvoices = function(){};
+            Contact.prototype.getpayements = function(){};
+
+            Contact.prototype.setFirstName = function(name){};
+            Contact.prototype.setLastName = function(name){};
+            Contact.prototype.addEmail = function(email){};
+            Contact.prototype.addPhone = function(phone){};
+            Contact.prototype.addAddress = function(address){};
+            Contact.prototype.linkGroup = function(group){};
+            Contact.prototype.addInvoice = function(invoice){};
+            Contact.prototype.addPayement = function(payement){};
+            Contact.prototype.save = function(){
+                var $this = this;
+                console.log ( {
+                    firstName : $this.firstName,
+                    lastName : $this.lastName,
+                    emails : $this.emails,
+                    company : $this.company,
+                    type : $this.type,
+                    phones : $this.phones,
+                    street : $this.street,
+                    city : $this.city,
+                    state : $this.state,
+                    zip : $this.zip,
+                    unit : $this.unit,
+                    birthday : $this.birthday,
+                    licenseNumber : $this.licenseNumber,
+                    licenseSate : $this.licenseSate,
+                    website : $this.website
+                } ); return false;
+                $.ajax({
+                    type: "POST",
+                    url: 'http://localhost:3000/createContact',
+                    data: {
+                        firstName : $this.firstName,
+                        lastName : $this.lastName,
+                        emails : $this.emails,
+                        company : $this.company,
+                        type : $this.type,
+                        phones : $this.phones,
+                        street : $this.street,
+                        city : $this.city,
+                        state : $this.state,
+                        zip : $this.zip,
+                        unit : $this.unit,
+                        birthday : $this.birthday,
+                        licenseNumber : $this.licenseNumber,
+                        licenseSate : $this.licenseSate,
+                        website : $this.website
+                    },
+                    success: function(){},
+                    dataType: 'JSON'
+                });
+
+            };
+
+
+
+
+
+
+
             var DataModel = this;
             DataModel.Case = Case;
             DataModel.ChekListItem = ChekListItem;

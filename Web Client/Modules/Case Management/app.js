@@ -1,6 +1,6 @@
 (function(){
     angular
-        .module('caseMan', ['ui.router', 'dataModel', 'treeView', 'cases'])
+        .module('caseMan', ['ui.router', 'dataModel', 'treeView', 'cases', 'users', 'contacts'])
 
         .config(function($stateProvider, $urlRouterProvider){
             $urlRouterProvider.otherwise("/home");
@@ -73,8 +73,8 @@
                 })
                 .state('app.contacts.createContact', {
                     url : '/createContact',
-                    templateUrl : '../Contacts/Views/createContact.htm',
-                    controller : 'CreateContactController'
+                    templateUrl : '../Contacts/Views/contact.htm',
+                    controller : 'ContactController'
                 })
 
 
